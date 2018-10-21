@@ -1,0 +1,104 @@
+<!doctype = html>
+<html>
+<head>
+<title>GLOBAL FREE AUDIO</title>
+
+<link rel="stylesheet" href = "/static/bootstrap.css">
+
+</head>
+<body>
+<div align=center>
+<div class = jumbotron>
+
+  <h1>Welcome To Global Free Audio</h1>
+
+  <h3 align = center><em>An audio retrieval tool by <a href = 'https://archive.org/details/ThomasParkBenchmarkHub'>Thomas Park</a>.</em></h3><br>
+
+  <h2><em>{{error}}</em></h2>
+
+</div>
+<div class="container">
+    <div class = jumbotron>
+  <p align = center><em>
+   For playlists of cc-licensed music, try <a href = "http://mystified131.pythonanywhere.com/">the Internet Archive Playlist Generator</a>.<br>
+   To watch playlists of cc-licensed videos and images, try <a href = "http://www.thomasparksolutions2.com">the Internet Archive Visual Aggregator</a>.<br>
+   For an embedded player presenting any of a large quantity of original cc-licensed audio works, try <a href = "http://www.thomasparksolutions3.com">the Thomas Park Audio Explorer</a>.<br>
+   To mix randomized industrial sound loops in real time, try <a href = "http://www.thomasparksolutions4.com">Mixplant</a>.<br>
+ </em>
+</p>
+</div>
+<br>
+<div align = center>
+    <img width = "700" src = "/static/tp.jpg">
+    <p><em>Image by Thomas Park</em></p>
+</div>
+<br><br>
+<div align = left>
+  <ul>
+  <li>This is an original program by Thomas Park. It allows you to retrieve playlists from collections of free audio that has been posted to the Internet Archive. The archive is based on Creative Commons file protocol, so files are free to access and share.</li>
+  <li>You may also choose for the faster option of generating links to current articles from the 6 major U.S. news networks.</li>
+  <li>The notion is that, by searching by keyword(s), you will be able to experience different views of particular subjects.</li>
+  <li>The links option searches only major networks, so you can avoid spammy 'Fake News' sites, with all of their misinformation and advertisements.</li>
+  <li>You may choose up to 2 search terms to refine your search. Each must be one word, with no spaces.</li>
+  <li>When you are finished, this program will open a new webpage featuring an audio playlist, or one with the desired links.</li>
+  <li>The audio search may turn up music, spoken word, news reports, or other forms of sound media.</li>
+  <li>For an audio search, you will have the option to download an .m3u playlist file, which will play in most media players.</li>
+  <li>Searches are performed either from the 'audio' collection at the Internet Archive or through 'Google'. Thomas has no influence over the material-- it is gathered by subject only.</li>
+  <li>The purpose of this program is to provide access to culture and information. Thomas Park does not necessarily own or have license for any of this culture, and he is neither altering nor making profits by creation or use of this program.</li>
+  </ul>
+</div>
+<br><br>
+
+<div class="container" align = center>
+        <div class="jumbotron">
+<form action = '/' method = 'POST'>
+
+    <h2>Let's Get Started.</h2><br>
+    <label> You can enter two search terms. They must be sets of characters with no spaces. What is the first?<br><br>
+            <input name="searchin" type="text" value = "" />
+        </label>
+
+<br><br>
+
+    <label> You can enter two search terms. They must be sets of characters with no spaces. What is the second? If none, press enter.<br><br>
+            <input name="secondsearch" type = "text" value = "" />
+        </label>
+
+<br><br>
+
+    <label>Please enter whether you would like to search for audio or simply generate a list of links.<br><br>
+            <input type="radio" name="option"  value = "n">Audio<br>
+            <input type="radio" name="option" value = "y">Links<br>
+     </label>
+
+<br><br>
+
+<input type="submit" />
+
+<br><br>
+</div>
+</form>
+<br><br>
+<div align = left>
+
+                <h2 align = center> About Your Results.</h2><br>
+<ul>
+<li>For audio searches, an .m3u file will be created.</li>
+<li>You may download the .m3u playlist from an audio search by pressing a button on the player page.</li>
+<li>If the file does not play or has no content, you may have chosen an empty search, so try again with different terms. If that is not the issue, you may need a different player.</li>
+<li>Your m3u file will be named "GFA", followed by your search term(s) and the date and time of your search.</li>
+<li>The audio searches may take some time to process-- more than a few minutes. Please be patient. If you get a '504' error, that is because the particular search terms took too long. Feel free to try again with different terms.</li>
+<li>The links option should open a new page almost immediately.</li>
+</ul>
+<br><br>
+
+</form>
+</div>
+</body>
+
+<foot align = center>
+<h6>Public Domain Mark 1.0</h6>
+<br><br>
+</foot>
+
+</html>

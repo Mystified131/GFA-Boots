@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GLOBAL FREE AUDIO PLAYER</title>
+
+        <link rel="stylesheet" href = "/static/bootstrap.css">
+
+    </head>
+    <body>
+        <div align=center>
+            <div class = jumbotron>
+
+        <h1>GLOBAL FREE AUDIO PLAYER</h1>
+        <br>
+            <audio controls autoplay = "True" loop =  "True" source src = {{toplay}} type = "audio/mp3">Your browser does not support embedded audio</audio>
+                <br><br>
+<p>Here is a link to this track:</p>
+<p><a href = {{toplay}}>{{toplay}}</a></p>
+
+<form action = "/newsplayer">If there's is a problem loading, or to start the next audio:
+<br><br>
+<input type="submit" value = "Next Audio" />
+</form>
+<br>
+</div>
+<br><br>
+
+<div align = left>
+
+            <ul>
+<li><h4>The current broadcast selection is from: <em>{{ur}}</em></h></li>
+<li><h5>This is number {{item}} of {{length}} items in the playlist.</h5></li>
+<li><h5>This randomly chosen audio will repeat endlessly, until you choose another track from your playlist by pressing 'Next Audio'.</h5> </li>
+<li><h5>This randomized approach allows users to experience different views of a chosen subject.</h5></li>
+</ul>
+</div>
+
+<div align = center>
+    <form action = "/download">To download all of these audio tracks as as .m3u playlist file, which will play in most media players:
+    <br><br>
+    <input type="submit" value = "Download" />
+    </form>
+    </div>
+
+<br><br>
+
+<div class="container" align = center>
+        <div class="jumbotron"><em>
+
+
+  For playlists of cc-licensed music, try <a href = "http://mystified131.pythonanywhere.com/">the Internet Archive Playlist Generator</a>.<br>
+  To watch playlists of cc-licensed videos and images, try <a href = "http://www.thomasparksolutions2.com">the Internet Archive Visual Aggregator</a>.<br>
+  For an embedded player presenting any of a large quantity of original cc-licensed audio works, try <a href = "http://www.thomasparksolutions3.com">the Thomas Park Audio Explorer</a>.<br>
+  To mix randomized industrial sound loops in real time, try <a href = "http://www.thomasparksolutions4.com">Mixplant</a>.<br>
+  To make another Global Free Audio search, go back to <a href = "http://www.thomasparksolutions.com">Global Free Audio</a>.<br>
+</em>
+  <br>
+  </div>
+</body>
+
+  <foot align = center>
+    <h6>Public Domain Mark 1.0</h6>
+    <br><br>
+    </foot>
+
+    </html>
