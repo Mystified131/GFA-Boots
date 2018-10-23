@@ -39,7 +39,7 @@ def index():
                 return render_template('index.html', error = error)
             else:
                 timestamp = session['timestamp']
-                session['playlist'] = "GFA_" + sear + sear2 + "_" + timestamp + ".m3u"
+                session['playlist'] = "GFA_audio_" + sear + sear2 + "_" + timestamp + ".m3u"
                 content = []
                 playlist = session['playlist']
                 infile = open(playlist, "r")
@@ -55,7 +55,17 @@ def index():
                 return render_template('newsplayer.html', toplay = atrack, ur = playlist, length = length, item = item)
 
         else:
-            return render_template('results.html', sear = sear, sear2 = sear2)
+            right_now = datetime.datetime.now().isoformat()
+            list = []
+            for i in right_now:
+                if i.isnumeric():
+                    list.append(i)
+        tim = "".join(list)
+        linkslist = "GFA_links_" + sear + sear2 + "_" + tim + ".txt"
+        outfile = open(linkslist, "w")
+        outfile.close()
+        ans1 = "audio"
+        return render_template('results.html', sear = sear, sear2 = sear2)
 
 #This code sets up the player page. It takes a random item from a list and cues it up in the player, along with some additional information and functionality.
 

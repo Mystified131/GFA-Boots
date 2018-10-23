@@ -126,7 +126,7 @@ def write_list_to_file(outname, lstname, typ, srch, timestamp):
         wrtstr = ".txt"
     if typ == "j":
         wrtstr = ".txt"
-    outnm = "GFA_" + srch + "_" + timestamp + wrtstr
+    outnm = "GFA_audio_" + srch + "_" + timestamp + wrtstr
 
     outfile = open(outnm, "w")
 
@@ -256,13 +256,3 @@ def data_process(ans1, timestamp, typ, sear, sear2):
     return error
 
 ## THE GHOST OF THE SHADOW ##
-
-
-
-
-
-
-
-
-
-

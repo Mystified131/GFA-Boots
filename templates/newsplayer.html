@@ -12,12 +12,13 @@
 
         <h1>GLOBAL FREE AUDIO PLAYER</h1>
         <br>
-            <audio controls autoplay = "True" loop =  "True" source src = {{toplay}} type = "audio/mp3">Your browser does not support embedded audio</audio>
+            <audio controls source src = {{toplay}} type = "audio/mp3">Your browser does not support embedded audio</audio>
                 <br><br>
 <p>Here is a link to this track:</p>
 <p><a href = {{toplay}}>{{toplay}}</a></p>
-
-<form action = "/newsplayer">If there's is a problem loading, or to start the next audio:
+<p>Press the play arrow on the viewer to start playing your audio.</p>
+<br>
+<form action = "/newsplayer">If there's ever a problem loading, or to start the next audio, press:
 <br><br>
 <input type="submit" value = "Next Audio" />
 </form>
@@ -30,7 +31,7 @@
             <ul>
 <li><h4>The current broadcast selection is from: <em>{{ur}}</em></h></li>
 <li><h5>This is number {{item}} of {{length}} items in the playlist.</h5></li>
-<li><h5>This randomly chosen audio will repeat endlessly, until you choose another track from your playlist by pressing 'Next Audio'.</h5> </li>
+<li><h5>You can choose another track from your playlist by pressing 'Next Audio'.</h5> </li>
 <li><h5>This randomized approach allows users to experience different views of a chosen subject.</h5></li>
 </ul>
 </div>
