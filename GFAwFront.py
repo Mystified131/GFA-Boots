@@ -1,7 +1,7 @@
 #This code imports the necessary modules.
 
 from flask import Flask, request, render_template, send_file, session
-
+from flask_sqlalchemy import SQLAlchemy
 from GFAw import data_process
 
 import cgi, datetime, random
@@ -10,7 +10,18 @@ import cgi, datetime, random
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://mystified131:Jackson131!@mystified131.mysql.pythonanywhere-services.com/mystified131$GFASearches'
+db = SQLAlchemy(app)
 app.secret_key = 'nomdutysn'
+
+#This code sets up the model for the database
+
+class GFASearches(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    sessiondata = db.Column(db.String(120))
+
+    def __init__(self, sessiondata):
+        self.sessiondata = sessiondata
 
 #This code constructs the main page. It takes data from several forms, processed the data using some functions from the model, and, after processing, opens a player page.
 
@@ -40,6 +51,10 @@ def index():
             else:
                 timestamp = session['timestamp']
                 session['playlist'] = "GFA_audio_" + sear + sear2 + "_" + timestamp + ".m3u"
+                sessiondata = "GFA_audio_" + sear + sear2 + "_" + timestamp
+                new_entry = GFASearches(sessiondata)
+                db.session.add(new_entry)
+                db.session.commit()
                 content = []
                 playlist = session['playlist']
                 infile = open(playlist, "r")
@@ -61,7 +76,11 @@ def index():
                 if i.isnumeric():
                     list.append(i)
         tim = "".join(list)
-        linkslist = "GFA_links_" + sear + sear2 + "_" + tim + ".txt"
+        linkslist = "GFA_links_" + sear + sear2 + "_" + tim
+        sessiondata = linkslist
+        new_entry = GFASearches(sessiondata)
+        db.session.add(new_entry)
+        db.session.commit()
         outfile = open(linkslist, "w")
         outfile.close()
         ans1 = "audio"
