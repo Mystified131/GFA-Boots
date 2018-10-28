@@ -17,8 +17,7 @@ app.secret_key = 'nomdutysn'
 #This code sets up the model for the database
 
 class GFASearches(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    sessiondata = db.Column(db.String(120))
+    sessiondata = db.Column(db.String(120), primary_key=True)
 
     def __init__(self, sessiondata):
         self.sessiondata = sessiondata
@@ -52,6 +51,8 @@ def index():
                 timestamp = session['timestamp']
                 session['playlist'] = "GFA_audio_" + sear + sear2 + "_" + timestamp + ".m3u"
                 sessiondata = "GFA_audio_" + sear + sear2 + "_" + timestamp
+                if len(sessiondata) > 119:
+                    sessiondata = sessiondata[:119]
                 new_entry = GFASearches(sessiondata)
                 db.session.add(new_entry)
                 db.session.commit()
