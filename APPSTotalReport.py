@@ -2,34 +2,39 @@
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+import datetime
 
 #This code configures the web app.
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://mystified131:Jackson131!@mystified131.mysql.pythonanywhere-services.com/mystified131$GFASearches'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://mystified131:Jackson131!@mystified131.mysql.pythonanywhere-services.com/mystified131$APPSTotal'
 db = SQLAlchemy(app)
 app.secret_key = 'noirhag3423irg'
 
 #This code sets up the model for the database
 
-class GFASearches(db.Model):
+class APPSTotal(db.Model):
     sessiondata = db.Column(db.String(120), primary_key=True)
 
-    def __init__(self, sessiondata):
-        self.sessiondata = sessiondata
+def __init__(self, sessiondata):
+    self.sessiondata = sessiondata
+
+right_now = datetime.datetime.now().isoformat()
 
 alldata = []
-totaldata = GFASearches.query.all()
+totaldata = APPSTotal.query.all()
 outstr = ""
 for elem in totaldata:
     alldata.append(elem)
 
-filnm = "GFA_Use_Report_Log.txt"
+filnm = "Apps_Use_Report_Log.txt"
 
 outfile = open(filnm, "w")
 
-outfile.write('GFA Use Report Log (As of 10/28/2018, 10:00 am Central US time):'  + '\n')
+outfile.write('Web Applications Use Report Log (As of 10/29/2018, 5:00 am Central US time):'  + '\n')
+outfile.write('\n')
+outfile.write('Report created at: ' + right_now  + '\n')
 outfile.write('\n')
 
 for elem2 in alldata:

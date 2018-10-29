@@ -10,13 +10,13 @@ import cgi, datetime, random
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://mystified131:Jackson131!@mystified131.mysql.pythonanywhere-services.com/mystified131$GFASearches'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://mystified131:Jackson131!@mystified131.mysql.pythonanywhere-services.com/mystified131$APPSTotal'
 db = SQLAlchemy(app)
 app.secret_key = 'nomdutysn'
 
 #This code sets up the model for the database
 
-class GFASearches(db.Model):
+class APPSTotal(db.Model):
     sessiondata = db.Column(db.String(120), primary_key=True)
 
     def __init__(self, sessiondata):
@@ -50,10 +50,10 @@ def index():
             else:
                 timestamp = session['timestamp']
                 session['playlist'] = "GFA_audio_" + sear + sear2 + "_" + timestamp + ".m3u"
-                sessiondata = "GFA_audio_" + sear + sear2 + "_" + timestamp
+                sessiondata = timestamp + "_GFA_audio_" + sear + sear2
                 if len(sessiondata) > 119:
                     sessiondata = sessiondata[:119]
-                new_entry = GFASearches(sessiondata)
+                new_entry = APPSTotal(sessiondata)
                 db.session.add(new_entry)
                 db.session.commit()
                 content = []
@@ -78,8 +78,8 @@ def index():
                     list.append(i)
         tim = "".join(list)
         linkslist = "GFA_links_" + sear + sear2 + "_" + tim
-        sessiondata = linkslist
-        new_entry = GFASearches(sessiondata)
+        sessiondata = tim + "_GFA_links_" + sear + sear2
+        new_entry = APPSTotal(sessiondata)
         db.session.add(new_entry)
         db.session.commit()
         outfile = open(linkslist, "w")
