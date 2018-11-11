@@ -24,6 +24,7 @@ right_now = datetime.datetime.now().isoformat()
 
 alldata = []
 totaldata = APPSTotal.query.all()
+totalhits = str(len(totaldata))
 outstr = ""
 for elem in totaldata:
     alldata.append(elem)
@@ -32,9 +33,12 @@ filnm = "Apps_Use_Report_Log.txt"
 
 outfile = open(filnm, "w")
 
-outfile.write('Web Applications Use Report Log (As of 10/29/2018, 5:00 am Central US time):'  + '\n')
+outfile.write('Web Applications Use Report Log (Beginning 10/29/2018, 5:00 am Central US time):'  + '\n')
 outfile.write('\n')
 outfile.write('Report created at: ' + right_now  + '\n')
+outfile.write('\n')
+
+outfile.write('Total App Hits: ' + totalhits  + '\n')
 outfile.write('\n')
 
 for elem2 in alldata:
