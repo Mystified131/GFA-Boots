@@ -12,7 +12,7 @@
 
         <h1>GLOBAL FREE AUDIO PLAYER</h1>
         <br>
-            <audio controls source src = {{toplay}} type = "audio/mp3">Your browser does not support embedded audio</audio>
+            <audio controls source src = {{toplay}} type = "audio/mp3" onended="window.open('?', '_self');">Your browser does not support embedded audio</audio>
                 <br><br>
 <p>Here is a link to this track:</p>
 <p><a href = {{toplay}}>{{toplay}}</a></p>
