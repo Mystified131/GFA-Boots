@@ -5,6 +5,21 @@
 
 <link rel="stylesheet" href = "/static/bootstrap.css">
 
+<script>
+
+    function starttimer() {
+  clock = setInterval("showtime()", 1000);
+}
+    function showtime() {
+
+      var now = new Date();
+      var time = now.toLocaleTimeString();
+      document.getElementById("ptime").innerHTML = time;
+    }
+
+
+</script>
+
 </head>
 <body>
 <div align=center>
@@ -20,11 +35,21 @@
 <div class="container">
     <div class = jumbotron>
   <p align = center><em>
-   For playlists of cc-licensed music, try <a href = "http://mystified131.pythonanywhere.com/">the Internet Archive Playlist Generator</a>.<br>
-   For an embedded player presenting any of a large quantity of original cc-licensed audio works, try <a href = "http://www.thomasparksolutions3.com">the Thomas Park Audio Explorer</a>.<br>
-   To mix randomized industrial sound loops in real time, try <a href = "http://www.thomasparksolutions4.com">Mixplant</a>.<br>
-   For cc-licensed images and videos by topic, visit <a href = "http://www.thomasparksolutions5.com">the Internet Archive Visual Aggregator</a>.<br>
- </em>
+For playlists of cc-licensed music, try <a href = "http://mystified131.pythonanywhere.com/">the Internet Archive Playlist Generator</a>.<br>
+For live generative soundscapes that you can control, try <a href = "http://www.thomasparksolutions.com">Generative Soundscape Radio</a>.<br>
+To listen to generative piano iterations, visit <a href = "http://www.thomasparksolutions2.com">Piano Iterations</a>.<br>
+For an embedded player presenting any of a large quantity of original cc-licensed audio works, try <a href = "http://www.thomasparksolutions3.com">the Thomas Park Audio Explorer</a>.<br>
+To listen to and remix generative dub tracks, listen to <a href = "http://www.thomasparksolutions4.com">Endless Dub Radio</a>.<br>
+To search for another visual items playlist, go to <a href = "http://www.thomasparksolutions5.com">the Internet Archive Visual Aggregator</a>.<br>
+To search for media by subject rather than orientation, try <a href = "http://www.thomasparksolutions6.com">Global Free Audio</a>.<br>
+To experience a possible answer to non-structured data, try the <a href = "http://www.thomasparksolutions7.com">Bee Hive</a>.<br>
+For your own personal mixer, to create live music, visit <a href = "http://www.thomasparksolutions8.com">MixPlant</a>.<br>
+For a continual generative stream based on Terry Riley's masterpiece "In C", try <a href = "http://www.thomasparksolutions9.com">Radio In C</a>.<br>
+    </em>
+
+  <br>
+You may contact Thomas Park directly at: mystifiedthomas@gmail.com . Thank you.
+<br>
 </p>
 </div>
 <br>
@@ -73,9 +98,12 @@
 
 <br><br>
 
-<input type="submit" />
-
-<br><br>
+<input type="submit" onclick="starttimer()" />
+<br><br><br>
+<h6>Time:</h6>
+<p><em>(Searches must take less than 5 minutes, or they will time out.)</em></p>
+ <p id="ptime"></p>
+<br>
 </div>
 </form>
 <br><br>
