@@ -51,6 +51,7 @@ EDR = 0
 PI = 0
 TA = 0
 RIC = 0
+BB = 0
 
 for elem2 in alldata:
     elem3 = str(elem2)
@@ -74,6 +75,9 @@ for elem2 in alldata:
         TA += 1
     if "RIC" in elem3:
         RIC += 1
+    if "BB" in elem3:
+        BB += 1
+
 
 Mixplantstr = "Mixplant: " + str(Mixplant)
 IAPGstr = "IAPG: " + str(IAPG)
@@ -85,6 +89,7 @@ EDRstr = "EDR: " + str(EDR)
 PIstr = "PI: " + str(PI)
 TAstr = "TA: " + str(TA)
 RICstr = "RIC: " + str(RIC)
+BBstr = "BB: " + str(BB)
 
 outfile.write(Mixplantstr + '\n')
 outfile.write(IAPGstr + '\n')
@@ -96,6 +101,7 @@ outfile.write(EDRstr + '\n')
 outfile.write(PIstr + '\n')
 outfile.write(TAstr + '\n')
 outfile.write(RICstr + '\n')
+outfile.write(BBstr + '\n')
 
 outfile.close()
 
