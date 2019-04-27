@@ -53,6 +53,7 @@ TA = 0
 RIC = 0
 BB = 0
 Helia = 0
+AO = 0
 
 for elem2 in alldata:
     elem3 = str(elem2)
@@ -80,6 +81,8 @@ for elem2 in alldata:
         BB += 1
     if "Helia" in elem3:
         Helia += 1
+    if "AO" in elem3:
+        AO += 1
 
 
 Mixplantstr = "Mixplant: " + str(Mixplant)
@@ -94,6 +97,7 @@ TAstr = "TA: " + str(TA)
 RICstr = "RIC: " + str(RIC)
 BBstr = "BB: " + str(BB)
 Heliastr = "Helia: " + str(Helia)
+AOstr = "AO: " + str(AO)
 
 outfile.write(Mixplantstr + '\n')
 outfile.write(IAPGstr + '\n')
@@ -107,6 +111,7 @@ outfile.write(TAstr + '\n')
 outfile.write(RICstr + '\n')
 outfile.write(BBstr + '\n')
 outfile.write(Heliastr + '\n')
+outfile.write(AOstr + '\n')
 
 outfile.close()
 
